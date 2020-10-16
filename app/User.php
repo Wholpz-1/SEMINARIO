@@ -2,9 +2,9 @@
 
 namespace App;
 
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
@@ -16,7 +16,15 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
+        'dpi',
+        'fdn',
+        'apellidos',
+        'genero',
+        'rol_id',
+
     ];
 
     /**
@@ -25,7 +33,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     /**
@@ -36,4 +45,40 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    ///////////////////////////////////relaciones////////////////////////////
+
+    public function rol() {
+        return $this->hasOne('App\Rol');
+      }
+
+      public function servicios()
+    {
+        return $this->hasMany('App\Servicio');
+    }
+
+    public function citas()
+    {
+        return $this->hasMany('App\Cita');
+    }
+
+
+//comprobar si es administrador o no
+ public function admin(){
+      return $this->rol_id === '3';
+    }
+
+
+      public function confirmado(){
+      return $this->confirmed === 1;
+    }
+
+    public function habilitado(){
+      return $this->estado === 'P';
+    }
+
+
+
+
+    
 }
