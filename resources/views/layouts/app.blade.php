@@ -27,15 +27,15 @@
     @yield('css')
 </head>
 
-<body class="skin-blue sidebar-mini">
+<body class="skin-yellow sidebar-mini">
 @if (!Auth::guest())
     <div class="wrapper">
         <!-- Main Header -->
         <header class="main-header">
 
             <!-- Logo -->
-            <a href="#" class="logo">
-                <b>InfyOm</b>
+            <a href="{{ url('/home/') }}" class="logo">
+                <b>Renap Citas</b>
             </a>
 
             <!-- Header Navbar -->

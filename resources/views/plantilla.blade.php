@@ -96,9 +96,33 @@
 
     <div class="text-center">
 
-    <h2><span class="badge badge-secondary">Requisitos</span></h2>
+    <h1><span class="badge badge-secondary">Requisitos</span></h1>
 
     </div>
+
+
+    <form class="text-center">
+        <div class="form-group" >
+
+
+        <h4>1. Documento Personal de Identificación -DPI- del padre y de la madre o sólo de la madre, en su caso  <span class="badge badge-secondary"></span></h4>
+        <h4>2. Documento Personal de Identificación -DPI- del compareciente, cuando éste sea distinto a los padres<span class="badge badge-secondary"></span></h4>
+        <h4>3. Informe de nacimiento, extendido por centro hospitalario, médico, enfermera(o) o comadrona acreditada(o) por el <span class="badge badge-secondary"></span></h4>
+        <h4>Ministerio de Salud Pública y Asistencia Social, cuerpo de bomberos o autoridad local  <span class="badge badge-secondary"></span></h4>
+        <h3>Example heading <span class="badge badge-secondary"></span></h3>
+        <h3>Example heading <span class="badge badge-secondary"></span></h3>
+        </div>
+    </form>
+
+    <div class="text-center">
+
+
+            <a href="{{ url ('/dpivali/tramites/') }}" class="btn btn-lg btn-secondary">Regresar</a>
+
+            <a href="{{ url ('/') }}" class="btn btn-lg btn-success">Agendar Cita</a>
+
+    </div>
+
                 <!-- FOOTER -->
                 <footer class="container">
 

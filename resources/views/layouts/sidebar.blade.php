@@ -30,6 +30,36 @@
           </span>
             </div>
         </form>
+
+
+
+            <div class="input-group">
+                <p><a class="btn btn-secondary" href="{{ url('/home/depa/') }}" role="button">Departamento</a></p>
+          </span>
+            </div>
+
+        <div class="input-group">
+            <p><a class="btn btn-secondary" href="{{ url('/home/muni/') }}" role="button">Municipio</a></p>
+            </span>
+        </div>
+
+
+        <div class="input-group">
+            <p><a class="btn btn-secondary" href="{{ url('/home/sucursal/') }}" role="button">Sucursales</a></p>
+            </span>
+        </div>
+
+
+        <div class="input-group">
+            <p><a class="btn btn-secondary" href="{{ url('/home/ventanilla/') }}" role="button">Ventanilla</a></p>
+            </span>
+        </div>
+
+        <div class="input-group">
+            <p><a class="btn btn-secondary" href="{{ url('/home/servicio/') }}" role="button">Servicio</a></p>
+            </span>
+        </div>
+
         <!-- Sidebar Menu -->
 
         <ul class="sidebar-menu" data-widget="tree">

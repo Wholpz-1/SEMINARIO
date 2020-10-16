@@ -27,6 +27,8 @@ Route::get('/dpivali/tramites/', function () {
 
 });
 
+
+
 Route::get('/tramiter/certificados/', function () {
     return view('plantilla');
 });
@@ -34,3 +36,31 @@ Route::get('/tramiter/certificados/', function () {
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->middleware('verified');
+
+Auth::routes(['verify' => true]);
+
+
+Route::get('/home/depa/', function () {
+    return view('depa');
+});
+
+
+Route::get('/home/muni/', function () {
+    return view('muni');
+});
+Route::get('/home/sucursal/', function () {
+    return view('sucursal');
+});
+
+Route::get('/home/ventanilla/', function () {
+    return view('ventanilla');
+});
+
+Route::get('/home/servicio/', function () {
+    return view('servicio');
+});
+
+
+
+
+
