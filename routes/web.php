@@ -63,4 +63,8 @@ Route::get('/home/servicio/', function () {
 
 
 
+//rutas de crud departamento
+Route::resource('departamento','DepartamentoController');
+
+
 

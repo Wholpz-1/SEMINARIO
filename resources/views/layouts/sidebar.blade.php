@@ -34,7 +34,7 @@
 
 
             <div class="input-group">
-                <p><a class="btn btn-secondary" href="{{ url('/home/depa/') }}" role="button">Departamento</a></p>
+                <p><a class="btn btn-secondary" href="{{ url('departamento') }}" role="button">Departamento</a></p>
           </span>
             </div>
 

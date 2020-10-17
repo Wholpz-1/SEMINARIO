@@ -20,25 +20,23 @@
                 </tr>
               </thead>
               <tbody>
-              
+              @foreach($departamento as $depa)
                 <tr>
-                  <td></td>
-                  <td></td>
+                  <td>{{$depa->id}}</td>
+                  <td>{{$depa->departamento}}</td>
                   <td>
                     
                     
-                    <form action="" method="post">
-                     
+                    <form action="{{route('departamento.destroy', $depa->id)}}" method="post">
+                      {{csrf_field()}}
                       <input name="_method" type="hidden" value="DELETE">
-                      
-                      <a href="" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
                       <button class="col-sm-2 btn btn-xs btn-danger " type="submit"><span class="fa fa-times"></span></button>
                     </form>
 
 
                   </td>
                 </tr>
-            
+            @endforeach
               </tbody>
               <tfoot>
               
@@ -64,12 +62,12 @@
 
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <form role="form" method="POST" action="">
+  <form role="form" method="POST" action="{{route('departamento.store')}}">
     {{ csrf_field() }}
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Crear Un Cliente</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Crear Un Departamento</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
           </button>
