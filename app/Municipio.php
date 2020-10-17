@@ -11,7 +11,7 @@ class Municipio extends Model
     
     protected $table ='municipios';
     
-    protected $fillable = ['municipio','departamento_id'];
+    protected $fillable = ['municipio','departamento_id','url'];
 
     
     public function departamento()
@@ -23,4 +23,10 @@ class Municipio extends Model
     {
         return $this->hasMany('App\Sucursal');
     }
+
+     public function getRouteKeyName()
+    {
+       return 'url';
+    }
+    
 }

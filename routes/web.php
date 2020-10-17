@@ -64,7 +64,17 @@ Route::get('/home/servicio/', function () {
 
 
 //rutas de crud departamento
-Route::resource('departamento','DepartamentoController');
+Route::get('departamento', 'DepartamentoController@index')-> name('departamento.index');
+Route::get('departamento/{depa}', 'DepartamentoController@edit')-> name('departamento.edit');
+Route::post('departamento', 'DepartamentoController@store')-> name('departamento.store');
+Route::delete('departamento/{depar}', 'DepartamentoController@destroy')-> name('departamento.destroy');
+
+
+//rutas de crud municipio
+Route::post('municipio/{depa}', 'MunicipioController@store')-> name('municipio.store');
+Route::delete('municipio/{depa}', 'MunicipioController@destroy')-> name('municipio.destroy');
+
+
 
 
 

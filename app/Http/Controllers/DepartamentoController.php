@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 
+
 use Illuminate\Http\Request;
 use App\Departamento;
+use App\Municipio;
+use Illuminate\Support\Str;
 
 class DepartamentoController extends Controller
 {
@@ -28,13 +31,24 @@ public function store(Request $request)
         
         $departamento = Departamento::create([
          'departamento' => $request->get('nombre'),
-       // 'url'=>str_slug($request->get('nombre')),
+         'url'=>Str::slug($request->get('nombre')),
         ]);
          
 
-         $departamento= Departamento::all();
+       
          return redirect()->route('departamento.index')->with('success','Registro guardado satisfactoriamente');
            }
+
+
+
+           public function edit(Departamento $depa)
+    {
+
+    
+      return view('departamento.edit',compact('depa'));
+
+
+    }
 
 
 
@@ -42,7 +56,6 @@ public function store(Request $request)
     {
         //
         Departamento::find($id)->delete();
-        $departamento = Departamento::all();
         return redirect()->route('departamento.index')->with('success','Registro eliminado satisfactoriamente');
         
     }
