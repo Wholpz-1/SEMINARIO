@@ -28,10 +28,112 @@ Route::get('/dpivali/tramites/', function () {
 });
 
 
+/*
+Ruta para requisitos de certificado de nacimiento
+*/
 
 Route::get('/tramiter/certificados/', function () {
     return view('plantilla');
+
 });
+/*
+Ruta para requisitos de certificado de Matrimonio
+*/
+Route::get('/tramites/matrimonio/', function () {
+    return view('reque2');
+
+
+});
+
+/*
+Ruta para requisitos de certificado de defuncion
+*/
+
+Route::get('/tramites/defuncion/', function () {
+    return view('reque3');
+
+
+});
+
+
+/*
+Ruta para requisitos de Solicitud DPI
+*/
+
+Route::get('/solicitudes/Sodpi/', function () {
+    return view('reque4');
+
+
+});
+
+
+/*
+Ruta para requisitos de Solicitud DPI
+*/
+
+Route::get('/solicitudes/Sodpi/', function () {
+    return view('reque4');
+
+
+});
+
+
+/*
+Ruta para requisitos de Nacionalidad
+*/
+
+Route::get('/solicitudes/Nacionalidad/', function () {
+    return view('reque5');
+
+
+});
+
+/*
+Ruta para requisitos de Doble Nacionalidad
+*/
+
+Route::get('/solicitudes/DNacionalidad/', function () {
+    return view('reque6');
+
+
+});
+
+/*
+Ruta para Inscripcion de recien nacidos
+*/
+
+Route::get('/Inscripcion/Nacidos/', function () {
+    return view('reque7');
+
+
+});
+
+/*
+Ruta para Inscripcion de Matrimonio
+*/
+
+Route::get('/Inscripcion/Matrimonio/', function () {
+    return view('reque8');
+
+
+});
+
+/*
+Ruta para cambio de nombre
+*/
+
+Route::get('/Cambio/Nombre/', function () {
+    return view('reque9');
+
+
+});
+
+
+
+
+
+
+
 
 Auth::routes(['verify' => true]);
 

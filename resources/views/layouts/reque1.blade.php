@@ -92,43 +92,18 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-    </div>
-
-    <div class="text-center">
-
-    <h1><span class="badge badge-secondary">Requisitos</span></h1>
-
-    </div>
 
 
-    <form class="text-center" >
-        <div class="card text-center">
-            <div class="card-header">
-                Al momento de realizar su tramite debe de presentar los siguientes documentos:
-            </div>
-            <div class="card-body">
-                <head aling="left">
-                <h6>1. Documento Personal de Identificación -DPI- del padre y de la madre o sólo de la madre, en su caso  <span class="badge badge-secondary"></span></h6>
-                <h6>2. Documento Personal de Identificación -DPI- del compareciente, cuando éste sea distinto a los padres<span class="badge badge-secondary"></span></h6>
-                <h6>3. Informe de nacimiento, extendido por centro hospitalario, médico, enfermera(o) o comadrona acreditada(o) por el <span class="badge badge-secondary"></span></h6>
-                    <h6>Ministerio de Salud Pública y Asistencia Social, cuerpo de bomberos o autoridad local  <span class="badge badge-secondary"></span></h6>
-                </head>
-            </div>
-            <div class="card-footer text-muted">
+    @yield('content')
 
-                <a href="{{ url ('/dpivali/tramites/') }}" class="btn btn-lg btn-secondary">Regresar</a>
 
-                <a href="{{ url ('/') }}" class="btn btn-lg btn-success">Agendar Cita</a>
 
-            </div>
-        </div>
-    </form>
 
 
 
                 <!-- FOOTER -->
                 <footer class="container">
-
+                    <p class="float-right"><a href="#">Back to top</a></p>
                     <p>&copy; 2017-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
                 </footer>
 </main>

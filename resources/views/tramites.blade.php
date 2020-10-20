@@ -43,7 +43,7 @@
             <img src="https://scontent.faqb1-1.fna.fbcdn.net/v/t1.0-9/18222708_2042755282408382_6807746146910715824_n.png?_nc_cat=109&_nc_sid=174925&_nc_ohc=YFYVlYMZZCoAX98Rahl&_nc_oc=AQkLQWZ20iQAFInKmt06kd725nKR1CezqZ-thpHkgi_uUNDgnmiD2V-A6ex_uYNTxE0&_nc_ht=scontent.faqb1-1.fna&oh=17e591b3b54d1c8a2b25df0364c45183&oe=5FAC7557" width="100px" height="100px">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{url ('/dpivali/tramites/')}}">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
@@ -129,7 +129,7 @@
                         <h2>de matrimonio</h2>
                     </div>
 
-                    <p><a class="btn btn-secondary" href="#" role="button">Detalles &raquo;</a></p>
+                    <p><a class="btn btn-secondary" href="{{ url ('/tramites/matrimonio/') }}" role="button">Detalles &raquo;</a></p>
                 </div>
 
             </div><!-- /.col-lg-4 -->
@@ -141,7 +141,7 @@
                         <h2>de defuncion</h2>
                     </div>
 
-                    <p><a class="btn btn-secondary" href="#" role="button">Detalles &raquo;</a></p>
+                    <p><a class="btn btn-secondary" href="{{ url ('/tramites/defuncion/') }}" role="button">Detalles &raquo;</a></p>
                 </div>
             </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
@@ -163,7 +163,7 @@
                                 <h2>DPI</h2>
                             </div>
 
-                            <p><a class="btn btn-secondary" href="#" role="button">Detalles &raquo;</a></p>
+                            <p><a class="btn btn-secondary" href="{{ url ('/solicitudes/Sodpi/')}}" role="button">Detalles &raquo;</a></p>
                         </div>
                     </div>
 
@@ -178,7 +178,7 @@
                             <h2>nacionalidad</h2>
                         </div>
 
-                        <p><a class="btn btn-secondary" href="#" role="button">Detalles &raquo;</a></p>
+                        <p><a class="btn btn-secondary" href="{{ url ('/solicitudes/Nacionalidad/') }}" role="button">Detalles &raquo;</a></p>
                     </div>
 
                 </div><!-- /.col-lg-4 -->
@@ -190,7 +190,7 @@
                             <h2>doble nacionalidad</h2>
                         </div>
 
-                        <p><a class="btn btn-secondary" href="#" role="button">Detalles &raquo;</a></p>
+                        <p><a class="btn btn-secondary" href="{{url ('/solicitudes/DNacionalidad/')}}" role="button">Detalles &raquo;</a></p>
                     </div>
                 </div><!-- /.col-lg-4 -->
             </div><!-- /.row -->
@@ -211,7 +211,7 @@
                                     <h2>recien nacidos</h2>
                                 </div>
 
-                                <p><a class="btn btn-secondary" href="#" role="button">Detalles &raquo;</a></p>
+                                <p><a class="btn btn-secondary" href="{{url ('/Inscripcion/Nacidos/')}}" role="button">Detalles &raquo;</a></p>
                             </div>
                         </div>
 
@@ -226,7 +226,7 @@
                                 <h2>matrimonio</h2>
                             </div>
 
-                            <p><a class="btn btn-secondary" href="#" role="button">Detalles &raquo;</a></p>
+                            <p><a class="btn btn-secondary" href="{{ url('/Inscripcion/Matrimonio/') }}" role="button">Detalles &raquo;</a></p>
                         </div>
 
                     </div><!-- /.col-lg-4 -->
@@ -238,7 +238,7 @@
                                 <h2>de nombre</h2>
                             </div>
 
-                            <p><a class="btn btn-secondary" href="#" role="button">Detalles &raquo;</a></p>
+                            <p><a class="btn btn-secondary" href="{{url ('/Cambio/Nombre/')}}" role="button">Detalles &raquo;</a></p>
                         </div>
                     </div><!-- /.col-lg-4 -->
                 </div><!-- /.row -->
