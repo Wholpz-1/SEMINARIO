@@ -37,7 +37,7 @@
                 <p><a class="btn btn-secondary" href="{{ url('departamento') }}" role="button">Departamento</a></p>
           </span>
             </div>
-            
+
 
         <div class="input-group">
             <p><a class="btn btn-secondary" href="{{ url('/home/sucursal/') }}" role="button">Sucursales</a></p>
@@ -52,6 +52,14 @@
 
         <div class="input-group">
             <p><a class="btn btn-secondary" href="{{ url('/home/servicio/') }}" role="button">Servicio</a></p>
+            </span>
+        </div>
+        <div class="input-group">
+            <p><a class="btn btn-secondary" href="{{ url('/home/hventanilla/') }}" role="button">Hora de Ventanillas</a></p>
+            </span>
+        </div>
+        <div class="input-group">
+            <p><a class="btn btn-secondary" href="{{ url('/home/cita/') }}" role="button">Cita</a></p>
             </span>
         </div>
 

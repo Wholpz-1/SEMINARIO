@@ -43,7 +43,7 @@
             <img src="https://scontent.faqb1-1.fna.fbcdn.net/v/t1.0-9/18222708_2042755282408382_6807746146910715824_n.png?_nc_cat=109&_nc_sid=174925&_nc_ohc=YFYVlYMZZCoAX98Rahl&_nc_oc=AQkLQWZ20iQAFInKmt06kd725nKR1CezqZ-thpHkgi_uUNDgnmiD2V-A6ex_uYNTxE0&_nc_ht=scontent.faqb1-1.fna&oh=17e591b3b54d1c8a2b25df0364c45183&oe=5FAC7557" width="100px" height="100px">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ url ('/dpivali/tramites/') }}">Inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
@@ -94,34 +94,11 @@
         </a>
     </div>
 
-    <div class="text-center">
 
-        <h1><span class="badge badge-secondary">Requisitos</span></h1>
-
-    </div>
+    @yield('content')
 
 
-    <form class="text-center">
-        <div class="form-group" >
 
-
-            <h4>1. Documento Personal de Identificación -DPI- del padre y de la madre o sólo de la madre, en su caso  <span class="badge badge-secondary"></span></h4>
-            <h4>2. Documento Personal de Identificación -DPI- del compareciente, cuando éste sea distinto a los padres<span class="badge badge-secondary"></span></h4>
-            <h4>3. Informe de nacimiento, extendido por centro hospitalario, médico, enfermera(o) o comadrona acreditada(o) por el <span class="badge badge-secondary"></span></h4>
-            <h4>Ministerio de Salud Pública y Asistencia Social, cuerpo de bomberos o autoridad local  <span class="badge badge-secondary"></span></h4>
-            <h3>Example heading <span class="badge badge-secondary"></span></h3>
-            <h3>Example heading <span class="badge badge-secondary"></span></h3>
-        </div>
-    </form>
-
-    <div class="text-center">
-
-
-        <a href="{{ url ('/dpivali/tramites/') }}" class="btn btn-lg btn-secondary">Regresar</a>
-
-        <a href="{{ url ('/tramites/citac') }}" class="btn btn-lg btn-success">Agendar Cita</a>
-
-    </div>
 
     <!-- FOOTER -->
     <footer class="container">
@@ -132,3 +109,4 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="../js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../js/bootstrap.bundle.min.js"></script>
 </html>
+
