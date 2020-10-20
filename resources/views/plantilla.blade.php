@@ -101,28 +101,40 @@
     </div>
 
 
-    <form class="text-center">
-        <div class="form-group" >
+    <form class="text-center" >
+        <div class="card text-center">
+            <div class="card-header">
+                Al momento de realizar su tramite debe de presentar los siguientes documentos:
+            </div>
+            <div class="card-body">
+                <head aling="left">
+                    <h6>1. Documento Personal de Identificación -DPI- del padre y de la madre o sólo de la madre, en su caso  <span class="badge badge-secondary"></span></h6>
+                    <h6>2. Documento Personal de Identificación -DPI- del compareciente, cuando éste sea distinto a los padres<span class="badge badge-secondary"></span></h6>
+                    <h6>3. Informe de nacimiento, extendido por centro hospitalario, médico, enfermera(o) o comadrona acreditada(o) por el <span class="badge badge-secondary"></span></h6>
+                    <h6>Ministerio de Salud Pública y Asistencia Social, cuerpo de bomberos o autoridad local  <span class="badge badge-secondary"></span></h6>
+                </head>
+            </div>
+            <div class="card-footer text-muted">
 
+                <a href="{{ url ('/dpivali/tramites/') }}" class="btn btn-lg btn-secondary">Regresar</a>
 
-            <h4>1. Documento Personal de Identificación -DPI- del padre y de la madre o sólo de la madre, en su caso  <span class="badge badge-secondary"></span></h4>
-            <h4>2. Documento Personal de Identificación -DPI- del compareciente, cuando éste sea distinto a los padres<span class="badge badge-secondary"></span></h4>
-            <h4>3. Informe de nacimiento, extendido por centro hospitalario, médico, enfermera(o) o comadrona acreditada(o) por el <span class="badge badge-secondary"></span></h4>
-            <h4>Ministerio de Salud Pública y Asistencia Social, cuerpo de bomberos o autoridad local  <span class="badge badge-secondary"></span></h4>
-            <h3>Example heading <span class="badge badge-secondary"></span></h3>
-            <h3>Example heading <span class="badge badge-secondary"></span></h3>
+                <a href="{{ url ('/') }}" class="btn btn-lg btn-success">Agendar Cita</a>
+
+            </div>
         </div>
     </form>
 
-    <div class="text-center">
 
 
-        <a href="{{ url ('/dpivali/tramites/') }}" class="btn btn-lg btn-secondary">Regresar</a>
+    <<<<<<< HEAD
+    =======
+    <a href="{{ url ('/dpivali/tramites/') }}" class="btn btn-lg btn-secondary">Regresar</a>
 
-        <a href="{{ url ('/tramites/citac') }}" class="btn btn-lg btn-success">Agendar Cita</a>
+    <a href="{{ url ('/tramites/citac') }}" class="btn btn-lg btn-success">Agendar Cita</a>
 
     </div>
 
+    >>>>>>> 51c0ed6b79ffb9712bb37c3cd284e826c14f0998
     <!-- FOOTER -->
     <footer class="container">
 
