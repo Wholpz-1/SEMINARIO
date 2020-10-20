@@ -60,6 +60,17 @@ Route::get('/home/servicio/', function () {
     return view('servicio');
 });
 
+Route::get('/home/hventanilla/', function () {
+    return view('hventanilla');
+});
+
+Route::get('/home/cita/', function () {
+    return view('cita');
+});
+Route::get('/tramites/citac/', function () {
+    return view('citac');
+});
+
 
 
 
