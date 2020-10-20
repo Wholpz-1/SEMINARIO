@@ -126,15 +126,7 @@
 
 
 
-    <<<<<<< HEAD
-    =======
-    <a href="{{ url ('/dpivali/tramites/') }}" class="btn btn-lg btn-secondary">Regresar</a>
 
-    <a href="{{ url ('/tramites/citac') }}" class="btn btn-lg btn-success">Agendar Cita</a>
-
-    </div>
-
-    >>>>>>> 51c0ed6b79ffb9712bb37c3cd284e826c14f0998
     <!-- FOOTER -->
     <footer class="container">
 
