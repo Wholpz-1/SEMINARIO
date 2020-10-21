@@ -43,7 +43,7 @@
             <img src="https://scontent.faqb1-1.fna.fbcdn.net/v/t1.0-9/18222708_2042755282408382_6807746146910715824_n.png?_nc_cat=109&_nc_sid=174925&_nc_ohc=YFYVlYMZZCoAX98Rahl&_nc_oc=AQkLQWZ20iQAFInKmt06kd725nKR1CezqZ-thpHkgi_uUNDgnmiD2V-A6ex_uYNTxE0&_nc_ht=scontent.faqb1-1.fna&oh=17e591b3b54d1c8a2b25df0364c45183&oe=5FAC7557" width="100px" height="100px">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ url ('/dpivali/tramites/') }}">Inicio <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
@@ -114,27 +114,22 @@
                     <h6>Ministerio de Salud Pública y Asistencia Social, cuerpo de bomberos o autoridad local  <span class="badge badge-secondary"></span></h6>
                 </head>
             </div>
-            <div class="card-footer text-muted">
 
-                <a href="{{ url ('/dpivali/tramites/') }}" class="btn btn-lg btn-secondary">Regresar</a>
+        </div>
 
-                <a href="{{ url ('/') }}" class="btn btn-lg btn-success">Agendar Cita</a>
-
-            </div>
         </div>
     </form>
 
+        <div class="text-center">
+        <div class="card-footer text-muted">
 
+         <a href="{{ url ('/dpivali/tramites/') }}" class="btn btn-lg btn-secondary">Regresar</a>
 
-    <<<<<<< HEAD
-    =======
-    <a href="{{ url ('/dpivali/tramites/') }}" class="btn btn-lg btn-secondary">Regresar</a>
+        <a href="{{ url ('/tramites/citac') }}" class="btn btn-lg btn-success">Agendar Cita</a>
 
-    <a href="{{ url ('/tramites/citac') }}" class="btn btn-lg btn-success">Agendar Cita</a>
+         </div>
+        </div>>
 
-    </div>
-
-    >>>>>>> 51c0ed6b79ffb9712bb37c3cd284e826c14f0998
     <!-- FOOTER -->
     <footer class="container">
 

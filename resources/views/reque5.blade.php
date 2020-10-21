@@ -4,7 +4,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <a>Solicitud de Nacionalidad </a>
+            <a>Solicitud DPI </a>
 
         </div>
     </div>
