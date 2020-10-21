@@ -2,10 +2,9 @@
 
 @section('content')
 
-    <h1>Departamento De {{$depa->departamento}}</h1>
      <div>
     <br>
-    <button class="btn btn-primary btn-lg active" data-toggle="modal" data-target="#exampleModal" aria-pressed="true">Añadir Municipio
+    <button class="btn btn-primary btn-lg active" data-toggle="modal" data-target="#exampleModal" aria-pressed="true">Añadir
     </button>
       </div>
 
@@ -16,24 +15,22 @@
               <thead>
                 <tr>
                   <th>ID</th>
+                  <th>Sucursal</th>
                   <th>Municipio</th>
                   <th>ACCIONES</th>
                 </tr>
               </thead>
               <tbody>
-              @foreach($depa->municipios as $muni)
+              @foreach($sucursal as $sucur)
                 <tr>
-                  <td>{{$muni->id}}</td>
-                  <td>{{$muni->municipio}}</td>
+                  <td>{{$sucur->id}}</td>
+                  <td>{{$sucur->sucursal}}</td>
+                  <td>{{$sucur->municipio->municipio}}</td>
                   <td>
 
 
-                    <form action="{{route('municipio.destroy', $depa)}}" method="post"> 
+                    <form action="{{route('sucursal.destroy', $sucur->id)}}" method="post">
                       {{csrf_field()}}
-
-                      <input name="_method" type="hidden" value="DELETE">
-                      <a href="{{route('sucursal.edit', $muni)}}" class="col-sm-2 btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
-                      <input name="id" type="hidden" value="{{$muni->id}}">
                       <button class="col-sm-2 btn btn-xs btn-danger " type="submit"><span class="fa fa-times"></span></button>
                     </form>
 
@@ -66,12 +63,12 @@
 
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <form role="form" method="POST" action="{{route('municipio.store',$depa)}}">
+  <form role="form" method="POST" action="{{route('departamento.store')}}">
     {{ csrf_field() }}
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Crear Un Municipio</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Crear Un Departamento</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
           </button>
@@ -79,7 +76,7 @@
         <div class="modal-body">
           <div class="form-group {{ $errors->has('nombre') ? 'has-error' : '' }}">
             <label for="nombre">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre del Municipio">
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre del Departamento">
             {!! $errors->first('nombre', '<span class="help-block">:message</span>') !!}
 
           </div>

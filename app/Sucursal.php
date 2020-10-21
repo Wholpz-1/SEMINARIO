@@ -10,7 +10,7 @@ class Sucursal extends Model
     
     protected $table ='sucursals';
     
-    protected $fillable = ['sucursal','municipio_id'];
+    protected $fillable = ['sucursal','municipio_id','descripcion'];
 
     
     public function municipio()

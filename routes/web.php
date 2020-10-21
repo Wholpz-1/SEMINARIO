@@ -188,6 +188,17 @@ Route::post('municipio/{depa}', 'MunicipioController@store')-> name('municipio.s
 Route::delete('municipio/{depa}', 'MunicipioController@destroy')-> name('municipio.destroy');
 
 
+//rutas de crud sucursales
+Route::post('sucursal/{muni}', 'SucursalController@store')-> name('sucursal.store');
+Route::get('sucursales', 'SucursalController@index')-> name('sucursal.index');
+Route::get('sucursales/{muni}', 'SucursalController@edit')-> name('sucursal.edit');
+Route::delete('sucursales/{sucursal}', 'SucursalController@destroy')-> name('sucursal.destroy');
+
+
+
+
+
+
 
 
 

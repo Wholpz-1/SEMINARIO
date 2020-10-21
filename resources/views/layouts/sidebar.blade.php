@@ -40,7 +40,7 @@
 
 
         <div class="input-group">
-            <p><a class="btn btn-secondary" href="{{ url('/home/sucursal/') }}" role="button">Sucursales</a></p>
+            <p><a class="btn btn-secondary" href="{{ url('sucursales')}}" role="button">Sucursales</a></p>
             </span>
         </div>
 
