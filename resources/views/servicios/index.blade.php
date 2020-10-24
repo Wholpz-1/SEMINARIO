@@ -15,7 +15,7 @@
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>DEPARTAMENTO</th>
+                  <th>Servicios</th>
                   <th>ACCIONES</th>
                 </tr>
               </thead>
