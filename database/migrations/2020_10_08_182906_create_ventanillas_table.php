@@ -19,6 +19,7 @@ class CreateVentanillasTable extends Migration
             $table->string('estado')->nullable();
             $table->string('url')->nullable();
             $table->foreignId('servcio_id')->references('id')->on('servicios')->constrained()->onDelete('cascade');
+            $table->foreignId('sucursal_id')->references('id')->on('sucursals')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

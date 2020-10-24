@@ -195,7 +195,21 @@ Route::get('sucursales/{muni}', 'SucursalController@edit')-> name('sucursal.edit
 Route::delete('sucursales/{sucursal}', 'SucursalController@destroy')-> name('sucursal.destroy');
 
 
+//ruta de crud configuracion
+Route::get('configuracion/sucursal/{sucursal}', 'SucursalController@configuracion')-> name('sucursal.configuracion.index');
 
+//ruta de crud iconos
+Route::get('iconos', 'IconoController@index')-> name('icono.index');
+Route::post('iconos', 'IconoController@store')-> name('icono.store');
+Route::delete('iconos/{icono}', 'IconoController@destroy')-> name('icono.destroy');
+
+
+//rutas de crud servicios
+Route::post('servicios', 'ServiciosController@store')-> name('servicio.store');
+Route::get('servicios', 'ServiciosController@index')-> name('servicio.index');
+Route::get('servicios/{servicio}', 'ServiciosController@edit')-> name('servicio.edit');
+Route::delete('servicios/{servicio}', 'ServiciosController@destroy')-> name('servicio.destroy');
+Route::put('servicios/{servicio}', 'ServiciosController@update')-> name('servicio.update');
 
 
 

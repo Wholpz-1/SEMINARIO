@@ -18,6 +18,11 @@ class Ventanilla extends Model
         return $this->belongsTo('App\Servicio');
     }
 
+    public function sucursal()
+    {
+        return $this->belongsTo('App\Sucursal');
+    }
+
     public function horaventanillas()
     {
         return $this->hasMany('App\Horaventanilla');

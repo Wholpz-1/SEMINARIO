@@ -10,7 +10,7 @@ class Servicio extends Model
  
     protected $table ='servicios';
     
-    protected $fillable = ['descripcion','user_id','icono_id'];
+    protected $fillable = ['descripcion','user_id','icono_id','url','nombre','requisitos'];
 
     
     public function user()
@@ -32,4 +32,10 @@ class Servicio extends Model
     {
         return $this->hasMany('App\Ventanilla');
     }
+
+    public function getRouteKeyName()
+    {
+       return 'url';
+    }
+
 }

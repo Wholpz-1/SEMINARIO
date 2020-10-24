@@ -10,7 +10,7 @@ class Icono extends Model
   
     protected $table ='iconos';
     
-    protected $fillable = ['url'];
+    protected $fillable = ['url','nombre'];
 
     
     public function servicios()
