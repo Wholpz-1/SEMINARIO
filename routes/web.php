@@ -193,6 +193,7 @@ Route::post('sucursal/{muni}', 'SucursalController@store')-> name('sucursal.stor
 Route::get('sucursales', 'SucursalController@index')-> name('sucursal.index');
 Route::get('sucursales/{muni}', 'SucursalController@edit')-> name('sucursal.edit');
 Route::delete('sucursales/{sucursal}', 'SucursalController@destroy')-> name('sucursal.destroy');
+Route::put('sucursal/{sucursal}', 'SucursalController@update')-> name('sucursal.update');
 
 
 //ruta de crud configuracion
@@ -210,6 +211,16 @@ Route::get('servicios', 'ServiciosController@index')-> name('servicio.index');
 Route::get('servicios/{servicio}', 'ServiciosController@edit')-> name('servicio.edit');
 Route::delete('servicios/{servicio}', 'ServiciosController@destroy')-> name('servicio.destroy');
 Route::put('servicios/{servicio}', 'ServiciosController@update')-> name('servicio.update');
+
+
+
+
+
+// rutas ventanillas 
+
+Route::post('ventanilla/{sucursal}', 'VentanillaController@store')-> name('ventanilla.store');
+Route::delete('ventanilla/{sucursal}', 'VentanillaController@destroy')-> name('ventanilla.destroy');
+Route::get('ventanilla/{ventanilla}', 'VentanillaController@edit')-> name('ventanilla.edit');
 
 
 

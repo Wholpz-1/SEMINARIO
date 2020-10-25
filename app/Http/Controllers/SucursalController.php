@@ -62,8 +62,16 @@ public function store(Municipio $muni,Request $request)
 
      public function configuracion(Sucursal $sucursal)
     {
-        dd($sucursal);
+         
+        return view('sucursals.configu',compact('sucursal'));
         
+    }
+
+
+
+    public function update(Sucursal $sucursal)
+    {
+       
     }
 
 

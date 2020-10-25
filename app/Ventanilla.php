@@ -10,7 +10,7 @@ class Ventanilla extends Model
     
     protected $table ='ventanillas';
     
-    protected $fillable = ['ventanilla','estado','servcio_id'];
+    protected $fillable = ['ventanilla','url','estado','servcio_id','sucursal_id'];
 
     
     public function servicio()
@@ -33,6 +33,10 @@ class Ventanilla extends Model
         return $this->hasMany('App\Cita');
     }
 
+    public function getRouteKeyName()
+    {
+       return 'url';
+    }
 
 
     
