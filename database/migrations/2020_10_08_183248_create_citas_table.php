@@ -16,9 +16,9 @@ class CreateCitasTable extends Migration
         Schema::create('citas', function (Blueprint $table) {
             $table->id();
             $table->date('fecha')->nullable();
-            $table->string('estado')->nullable();
+            $table->date('fecha_finalizada')->nullable();
+            $table->enum('estado',['Solicitada','Cancelada','Terminada','Proceso','Confirmada'])->default('Solicitada');
             $table->string('descripcion')->nullable();
-
             $table->foreignId('user_id')->references('id')->on('users')->constrained()->onDelete('cascade');
             $table->foreignId('sucursal_id')->references('id')->on('sucursals')->constrained()->onDelete('cascade');
             $table->foreignId('ventanilla_id')->references('id')->on('ventanillas')->constrained()->onDelete('cascade');

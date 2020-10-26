@@ -30,8 +30,9 @@ class Servicio extends Model
 
     public function ventanillas()
     {
-        return $this->hasMany('App\Ventanilla');
+        return $this->belongsToMany('App\Ventanilla');
     }
+
 
     public function getRouteKeyName()
     {

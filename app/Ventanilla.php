@@ -10,12 +10,12 @@ class Ventanilla extends Model
     
     protected $table ='ventanillas';
     
-    protected $fillable = ['ventanilla','url','estado','servcio_id','sucursal_id'];
+    protected $fillable = ['ventanilla','url','estado','sucursal_id'];
 
     
     public function servicio()
     {
-        return $this->belongsTo('App\Servicio');
+        return $this->belongsToMany('App\Servicio');
     }
 
     public function sucursal()

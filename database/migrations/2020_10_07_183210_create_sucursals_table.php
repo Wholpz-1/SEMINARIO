@@ -16,6 +16,7 @@ class CreateSucursalsTable extends Migration
         Schema::create('sucursals', function (Blueprint $table) {
             $table->id();
             $table->string('sucursal')->nullable();
+            $table->enum('estado',['Habilitada','Deshabilitada'])->default('Deshabilitada');
             $table->string('descripcion')->nullable();
             $table->string('url')->nullable();
             $table->foreignId('municipio_id')->references('id')->on('municipios')->constrained()->onDelete('cascade');

@@ -16,12 +16,28 @@ class CreateVentanillasTable extends Migration
         Schema::create('ventanillas', function (Blueprint $table) {
             $table->id();
             $table->string('ventanilla')->nullable();
-            $table->string('estado')->nullable();
+            $table->enum('estado',['Habilitada','Deshabilitada'])->default('Deshabilitada');
             $table->string('url')->nullable();
-            $table->foreignId('servcio_id')->references('id')->on('servicios')->constrained()->onDelete('cascade')->nullable();
             $table->foreignId('sucursal_id')->references('id')->on('sucursals')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
+
+
+         //tabla pivote entre servicios y ventanillas
+        Schema::create('servicio_ventanilla',function (Blueprint $table){
+             $table->id();
+             //ojo mas campos si se necesitan se agregan aqui. :)
+             
+             //relacion con blog y etiqueta muchos a muchos.
+             $table->foreignId('servicio_id')->references('id')->on('servicios')->constrained()->onDelete('cascade');
+             $table->foreignId('ventanilla_id')->references('id')->on('ventanillas')->constrained()->onDelete('cascade');
+                          
+             $table->timestamps();
+        });
+
+
+
+
     }
 
     /**

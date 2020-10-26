@@ -67,7 +67,7 @@ public function store(Request $request)
         $iconos = $request->input('icono');
             
             $servicio->nombre=$request->get('servicio');
-            $url=Str::slug($request->get('servicio')),
+            $url=Str::slug($request->get('servicio'));
             $servicio->descripcion=$request->get('descripcion');
             $servicio->requisitos=$request->get('requisitos');
             

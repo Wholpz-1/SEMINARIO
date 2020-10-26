@@ -29,7 +29,6 @@ public function store(Request $request, Sucursal $sucursal)
         $Ventanilla = Ventanilla::create([
          'ventanilla' => $request->get('nombre'),
          'sucursal_id'=> $sucursal->id,
-         'estado'=> 'Deshabilitado',
          'url'=>Str::slug($request->get('nombre')),
         ]);
          
