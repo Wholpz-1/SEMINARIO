@@ -221,7 +221,13 @@ Route::put('servicios/{servicio}', 'ServiciosController@update')-> name('servici
 Route::post('ventanilla/{sucursal}', 'VentanillaController@store')-> name('ventanilla.store');
 Route::delete('ventanilla/{sucursal}', 'VentanillaController@destroy')-> name('ventanilla.destroy');
 Route::get('ventanilla/{ventanilla}', 'VentanillaController@edit')-> name('ventanilla.edit');
+Route::put('ventanilla/{ventanilla}', 'VentanillaController@update')-> name('ventanilla.update');
 
+
+// rutas horas ventanillas
+
+Route::post('hora/{ventanilla}', 'HoraController@store')-> name('hora.store');
+Route::delete('hora/{ventanilla}', 'HoraController@destroy')-> name('hora.destroy');
 
 
 

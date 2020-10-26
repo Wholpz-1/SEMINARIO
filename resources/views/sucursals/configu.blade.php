@@ -35,13 +35,17 @@
 
 
  <div class="form-row">
-   <div>
+   
+                <div class="col-md-12 mb-6">
+                    <h2>Ventanillas</h2>
+
+
+
+                    <div>
     <br>
     <button class="btn btn-primary btn-lg active" data-toggle="modal" data-target="#exampleModal" aria-pressed="true">Añadir Ventanilla
     </button>
       </div>
-                <div class="col-md-12 mb-6">
-                    <h2>Ventanillas</h2>
 
                     <table id="posts-table" class="table table-bordered table-striped">
               <thead>

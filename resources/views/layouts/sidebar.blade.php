@@ -31,37 +31,29 @@
             </div>
         </form>
 
-
+            <div class="input-group">
+            <span><p><a class="btn btn-secondary" href="{{ url('/home/cita/') }}" role="button">Cita</a></p>
+            </span>
+        </div>
 
             <div class="input-group">
-                <p><a class="btn btn-secondary" href="{{ url('departamento') }}" role="button">Departamento</a></p>
+              <span>  <p><a class="btn btn-secondary" href="{{ url('departamento') }}" role="button">Departamento</a></p>
           </span>
             </div>
 
 
         <div class="input-group">
-            <p><a class="btn btn-secondary" href="{{ url('sucursales')}}" role="button">Sucursales</a></p>
+           <span> <p><a class="btn btn-secondary" href="{{ url('sucursales')}}" role="button">Sucursales</a></p>
             </span>
         </div>
 
 
         <div class="input-group">
-            <p><a class="btn btn-secondary" href="{{ url('/home/ventanilla/') }}" role="button">Ventanilla</a></p>
+            <span><p><a class="btn btn-secondary" href="{{ url('servicios') }}" role="button">Servicio</a></p>
             </span>
         </div>
-
-        <div class="input-group">
-            <p><a class="btn btn-secondary" href="{{ url('servicios') }}" role="button">Servicio</a></p>
-            </span>
-        </div>
-        <div class="input-group">
-            <p><a class="btn btn-secondary" href="{{ url('/home/hventanilla/') }}" role="button">Hora de Ventanillas</a></p>
-            </span>
-        </div>
-        <div class="input-group">
-            <span><p><a class="btn btn-secondary" href="{{ url('/home/cita/') }}" role="button">Cita</a></p>
-            </span>
-        </div>
+       
+        
         <div class="input-group">
             <span><p><a class="btn btn-secondary" href="{{ url('iconos') }}" role="button">Iconos</a></p>
             </span>

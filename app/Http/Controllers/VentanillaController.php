@@ -42,11 +42,11 @@ public function store(Request $request, Sucursal $sucursal)
            public function edit(Ventanilla $ventanilla)
     {
 
-        $servicio= Servicio::all();
-      return view('ventanillas.edit',compact('ventanilla','servicio'));
+        $servicios= Servicio::all();
+      return view('ventanillas.edit',compact('ventanilla','servicios'));
 
 
-    }
+    } 
 
 
 
@@ -58,6 +58,17 @@ public function store(Request $request, Sucursal $sucursal)
         return view('sucursals.configu',compact('sucursal'));
         
     }
+
+
+
+        public function update(Ventanilla $ventanilla, Request $request){
+            $ventanilla->estado=$request->get('estado');
+            $ventanilla->servicio()->sync($request->get('servicio'));
+            $ventanilla->save();
+            
+             return redirect()->route('ventanilla.edit',$ventanilla)->with('success','Registro guardado satisfactoriamente');
+
+        }
 
 
 

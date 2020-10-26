@@ -110,7 +110,7 @@
                     <button type="submit" class="btn btn-primary btn-lg active" role="button" type="submit" aria-pressed="true">Guardar</button>
                     
                    
-                    <a href="#" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Cancelar</a><br>
+                  
                 </div>
 
 
