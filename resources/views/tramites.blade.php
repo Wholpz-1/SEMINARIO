@@ -43,10 +43,10 @@
             <img src="https://scontent.faqb1-1.fna.fbcdn.net/v/t1.0-9/18222708_2042755282408382_6807746146910715824_n.png?_nc_cat=109&_nc_sid=174925&_nc_ohc=YFYVlYMZZCoAX98Rahl&_nc_oc=AQkLQWZ20iQAFInKmt06kd725nKR1CezqZ-thpHkgi_uUNDgnmiD2V-A6ex_uYNTxE0&_nc_ht=scontent.faqb1-1.fna&oh=17e591b3b54d1c8a2b25df0364c45183&oe=5FAC7557" width="100px" height="100px">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{url ('/dpivali/tramites/')}}">Inicio</a>
+                    <a class="nav-link">Bienvenido</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#">{{$user->name}}</a>
                 </li>
 
             </ul>
@@ -102,145 +102,28 @@
 
         <!-- Columnas  -->
         <div class="row" >
+            
+
+            @foreach($servicio as $ser)
             <div class="col-lg-4">
 
 
                <div class="text-center">
                    <div class="card" style="width: 18rem;">
-                       <img src="https://www.flaticon.es/svg/static/icons/svg/2372/2372625.svg" width="20%" height="150" class="card-img-top" alt="...">
+                       <img src="{{$ser->icono->url}}" width="20%" height="150" class="card-img-top" alt="...">
                        <div class="card-body">
-                           <h2>Certificacion</h2>
-                           <h2>de nacimiento</h2>
+                           <h2>{{$ser->nombre}}</h2>
                        </div>
 
-                       <p><a class="btn btn-secondary" href="{{ url ('/tramiter/certificados/') }}" role="button">Detalles &raquo;</a></p>
+                       <p><a class="btn btn-secondary" href="{{ route('validar.servicio', [$user, $ser]) }}" role="button">Detalles &raquo;</a></p>
 
                        </div>
                    </div>
 
             </div><!-- /.col-lg-4 -->
-<!--  Certificacion de Matrimonio   -->
-
-            <div class="col-lg-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://www.flaticon.es/svg/static/icons/svg/3460/3460948.svg" width="20%" height="150" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h2>Certificacion</h2>
-                        <h2>de matrimonio</h2>
-                    </div>
-
-                    <p><a class="btn btn-secondary" href="{{ url ('/tramites/matrimonio/') }}" role="button">Detalles &raquo;</a></p>
-                </div>
-
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://www.flaticon.es/svg/static/icons/svg/1312/1312384.svg" width="20%" height="150" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h2>Certificacion</h2>
-                        <h2>de defuncion</h2>
-                    </div>
-
-                    <p><a class="btn btn-secondary" href="{{ url ('/tramites/defuncion/') }}" role="button">Detalles &raquo;</a></p>
-                </div>
-            </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-
-        <!-- Menu de Opciones  2 -->
-
-        <div class="container marketing">
-
-            <!-- Columnas  -->
-            <div class="row" >
-                <div class="col-lg-4">
-
-
-                    <div class="text-center">
-                        <div class="card" style="width: 18rem;">
-                            <img src="https://www.flaticon.es/svg/static/icons/svg/2898/2898532.svg" width="20%" height="150" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h2>Solicitud de</h2>
-                                <h2>DPI</h2>
-                            </div>
-
-                            <p><a class="btn btn-secondary" href="{{ url ('/solicitudes/Sodpi/')}}" role="button">Detalles &raquo;</a></p>
-                        </div>
-                    </div>
-
-                </div><!-- /.col-lg-4 -->
                 <!--  Certificacion de Matrimonio   -->
-
-                <div class="col-lg-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://www.flaticon.es/svg/static/icons/svg/630/630607.svg" width="20%" height="150" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h2>Solicitud de </h2>
-                            <h2>nacionalidad</h2>
-                        </div>
-
-                        <p><a class="btn btn-secondary" href="{{ url ('/solicitudes/Nacionalidad/') }}" role="button">Detalles &raquo;</a></p>
-                    </div>
-
-                </div><!-- /.col-lg-4 -->
-                <div class="col-lg-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://www.flaticon.es/svg/static/icons/svg/3410/3410964.svg" width="20%" height="150" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h2>Solicitud de </h2>
-                            <h2>doble nacionalidad</h2>
-                        </div>
-
-                        <p><a class="btn btn-secondary" href="{{url ('/solicitudes/DNacionalidad/')}}" role="button">Detalles &raquo;</a></p>
-                    </div>
-                </div><!-- /.col-lg-4 -->
-            </div><!-- /.row -->
-            <!-- Menu de Opciones  3 -->
-
-            <div class="container marketing">
-
-                <!-- Columnas  -->
-                <div class="row" >
-                    <div class="col-lg-4">
-
-
-                        <div class="text-center">
-                            <div class="card" style="width: 18rem;">
-                                <img src="https://www.flaticon.es/svg/static/icons/svg/1902/1902726.svg" width="20%" height="150" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h2>Inscripcion de</h2>
-                                    <h2>recien nacidos</h2>
-                                </div>
-
-                                <p><a class="btn btn-secondary" href="{{url ('/Inscripcion/Nacidos/')}}" role="button">Detalles &raquo;</a></p>
-                            </div>
-                        </div>
-
-                    </div><!-- /.col-lg-4 -->
-                    <!--  Certificacion de Matrimonio   -->
-
-                    <div class="col-lg-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="https://www.flaticon.es/svg/static/icons/svg/349/349337.svg" width="20%" height="150" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h2>Inscripcion de</h2>
-                                <h2>matrimonio</h2>
-                            </div>
-
-                            <p><a class="btn btn-secondary" href="{{ url('/Inscripcion/Matrimonio/') }}" role="button">Detalles &raquo;</a></p>
-                        </div>
-
-                    </div><!-- /.col-lg-4 -->
-                    <div class="col-lg-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="https://www.flaticon.es/svg/static/icons/svg/1828/1828492.svg" width="20%" height="150" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h2>Cambio de </h2>
-                                <h2>de nombre</h2>
-                            </div>
-
-                            <p><a class="btn btn-secondary" href="{{url ('/Cambio/Nombre/')}}" role="button">Detalles &raquo;</a></p>
-                        </div>
-                    </div><!-- /.col-lg-4 -->
+                @endforeach
+            
                 </div><!-- /.row -->
 
 

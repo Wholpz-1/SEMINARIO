@@ -24,7 +24,7 @@ Route::get('/dpivali/', function () {
 Route::get('/dpivali/tramites/', function () {
     return view('tramites');
 
-
+ 
 });
 
 
@@ -39,11 +39,7 @@ Route::get('/tramiter/certificados/', function () {
 /*
 Ruta para requisitos de certificado de Matrimonio
 */
-Route::get('/tramites/matrimonio/', function () {
-    return view('reque2');
 
-
-});
 
 /*
 Ruta para requisitos de certificado de defuncion
@@ -228,6 +224,41 @@ Route::put('ventanilla/{ventanilla}', 'VentanillaController@update')-> name('ven
 
 Route::post('hora/{ventanilla}', 'HoraController@store')-> name('hora.store');
 Route::delete('hora/{ventanilla}', 'HoraController@destroy')-> name('hora.destroy');
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////
+//rutas clientes
+
+
+//rutas validad dpi
+
+Route::post('validardpi', 'ValidarDpiController@validar')-> name('validar.validar');
+
+
+
+
+
+
+//servicios 
+Route::get('seleccionar/{user}/{servicio}', 'ValidarDpiController@servicio')-> name('validar.servicio');
+
+
+
+//rutas agendar cita
+
+Route::get('agendar/{user}/{servicio}', 'AgendarController@index')-> name('agendar.index');
+Route::post('agendar/getsucursal/','AgendarController@getSucursal')->name('agendar.getsucursal');
 
 
 

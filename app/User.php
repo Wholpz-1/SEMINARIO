@@ -24,6 +24,7 @@ class User extends Authenticatable
         'apellidos',
         'genero',
         'rol_id',
+        'url',
 
     ];
 
@@ -75,6 +76,11 @@ class User extends Authenticatable
 
     public function habilitado(){
       return $this->estado === 'P';
+    }
+
+    public function getRouteKeyName()
+    {
+       return 'dpi';
     }
 
 

@@ -74,12 +74,13 @@
     </header>
 
     <main role="main" class="inner cover">
-        <form>
+         <form role="form" method="POST" action="{{route('validar.validar')}}">
+            {{ csrf_field() }}
 
             <h5 class="cover-heading">Ingresa Numero de DPI</h5>
             <div class="form-group">
 
-                <input type="number" class="form-control"  max="13" id="exampleInputPassword1" required>
+                <input type="number" class="form-control" name="dpi" id="dpi" required>
             </div>
 
             <div class="card mb-3">
@@ -88,16 +89,18 @@
 
 
 
-        </form>
+     
 
 
 
         <div class="col-xs-4">
 
             <p class="lead">
-                <a href="{{ url ('/dpivali/tramites/') }}" class="btn btn-lg btn-secondary">Validar</a>
+                 <button type="submit" class="btn btn-lg btn-secondary" role="button" type="submit" aria-pressed="true">Validar</button>
             </p>
         </div>
+
+           </form>
     </main>
 
 
