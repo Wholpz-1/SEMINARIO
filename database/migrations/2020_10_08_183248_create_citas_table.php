@@ -22,7 +22,7 @@ class CreateCitasTable extends Migration
             $table->foreignId('user_id')->references('id')->on('users')->constrained()->onDelete('cascade');
             $table->foreignId('sucursal_id')->references('id')->on('sucursals')->constrained()->onDelete('cascade');
             $table->foreignId('ventanilla_id')->references('id')->on('ventanillas')->constrained()->onDelete('cascade');
-            $table->foreignId('servcio_id')->references('id')->on('servicios')->constrained()->onDelete('cascade');
+            $table->foreignId('servicio_id')->references('id')->on('servicios')->constrained()->onDelete('cascade');
             $table->foreignId('horaventanilla_id')->references('id')->on('horaventanillas')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

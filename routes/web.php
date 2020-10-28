@@ -262,6 +262,7 @@ Route::get('agendar/getsucursal/','AgendarController@getSucursal')->name('agenda
 
 Route::post('agendar/{user}/{servicio}', 'AgendarController@fase2')-> name('agendar.fase2');
 Route::post('agendarfase3/{user}/{servicio}', 'AgendarController@fase3')-> name('agendar.fase3');
+Route::post('confirmarcita/{user}/{servicio}', 'AgendarController@store')-> name('agendar.store');
 
 
 

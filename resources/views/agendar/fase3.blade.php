@@ -4,7 +4,8 @@
 
 
 
-
+<form role="form" method="POST" action="{{route('agendar.store',[$user,$servicio])}}">
+     {{ csrf_field() }}
 
 
     <div class="container">
@@ -38,6 +39,7 @@
 
                     <div class="col-md-6 mb-3">
                         <label for="validationDefault04">Sucursal</label>
+                        <input type="hidden" name="sucursal_id" value="{{$sucursal->id}}">
                         <input type="text" class="form-control" name="sucursal" id="sucursal" value="{{$sucursal->sucursal}}" readonly="readonly">
                     </div>
                     <div class="col-md-12 mb-3">
@@ -53,7 +55,7 @@
 
 
                     <div class="col-md-6 mb-3">
-                        <label for="validationDefault06">Horario</label>
+                        <label for="validationDefault06">Fecha</label>
                         <input class="form-control" name="fecha" value="{{$fecha}}" id="date" type="input" readonly="readonly">
                     </div>
 
@@ -64,12 +66,12 @@
 
 
                      <div class="col-md-6 mb-3">
-                        <label for="validationDefault05">Ventanilla</label>
-                        <select class="ventanilla form-control" name="ventanilla" required>
-                         @foreach($servicio->ventanillas as $ventanilla)
-                          @if($ventanilla->estado=='Habilitada' && $ventanilla->sucursal_id==$sucursal->id)
-                          <option value="{{$ventanilla->id}}">{{$ventanilla->ventanilla}}</option> 
-                          @endif 
+                        <label for="validationDefault05">Horarios</label>
+                        <select class="ventanilla form-control" name="hora" required>
+                         @foreach($ventanilla->horaventanillas as $hora)
+                         
+                          <option value="{{$hora->id}}">{{$hora->hora}}</option> 
+                           
                           @endforeach
                         </select>
                     </div>
@@ -78,8 +80,11 @@
             <div class="form-group">
                 <div class="form-check">
 
-                    <div>
-                        <br><a href="#" class="btn btn-primary btn-lg active" role="button" type="submit" aria-pressed="true">Siguiente</a>
+                      <div>
+
+                        <button type="submit" class="btn btn-primary btn-lg active" role="button" type="submit" aria-pressed="true">Agendar Cita</button>
+
+                       
                         <br>
                     </div>
 
@@ -95,7 +100,7 @@
     </div>
 </div>
 
-
+</form>
 
 
 

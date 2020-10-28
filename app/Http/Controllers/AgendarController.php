@@ -8,6 +8,7 @@ use App\User;
 use App\Servicio;
 use App\Sucursal;
 use App\Ventanilla;
+use App\Cita;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -26,21 +27,25 @@ class AgendarController extends Controller
 
 
 
-public function store(Request $request)
+public function store(Request $request, User $user, Servicio $servicio)
     {
        //metodo que inserta en la base de datos y redirecciona al index
              $this->validate($request, [
-            'nombre' => 'required'   
+            'hora' => 'required'   
         ]);
         
-        $departamento = Departamento::create([
-         'departamento' => $request->get('nombre'),
-         'url'=>Str::slug($request->get('nombre')),
+        $cita = Cita::create([
+         'fecha' => Carbon::parse($request->get('fecha'))->format('y-m-d'),
+         'user_id'=>$user->id,
+         'sucursal_id'=>$request->get('sucursal_id'),
+         'ventanilla_id'=>$request->get('ventanilla'),
+         'servicio_id'=>$servicio->id,
+         'horaventanilla_id'=>$request->get('hora'),
         ]);
          
 
        
-         return redirect()->route('departamento.index')->with('success','Registro guardado satisfactoriamente');
+       return view('agendar.index',compact('user','cita','servicio'));
            }
 
 
@@ -85,7 +90,11 @@ public function store(Request $request)
 
         $fecha=Carbon::parse($request->get('fecha'))->format('d-m-yy');
 
-        return view('agendar.fase3',compact('user','servicio','sucursal','ventanilla','fecha'));
+        $horarios=$ventanilla->horaventanillas;
+
+        
+
+        return view('agendar.fase3',compact('user','servicio','sucursal','ventanilla','fecha','horarios'));
     }
 
 }
