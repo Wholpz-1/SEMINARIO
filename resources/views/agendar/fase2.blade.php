@@ -4,13 +4,9 @@
 
 
 
-  
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
 
-<form role="form" method="POST" action="{{route('agendar.fase2',[$user,$servicio])}}">
+<form role="form" method="POST" action="{{route('agendar.fase3',[$user,$servicio])}}">
      {{ csrf_field() }}
     <div class="container">
         <div class="container">
@@ -18,10 +14,11 @@
 
                 <br>
                 <div class="col-md-12 mb-12">
-                <h1>Pimera Fase</h1>
+                <h1>Segunda Fase</h1>
                  </div>
                     <br>
-                    
+
+
                     <div class="col-md-6 mb-3">
                         <label for="validationDefault01">Nombre</label>
                         <input type="text" class="form-control" name="nombre" id="nombre" value="{{$user->name}}" readonly="readonly">
@@ -42,14 +39,36 @@
 
                     <div class="col-md-6 mb-3">
                         <label for="validationDefault04">Sucursal</label>
-                        <select class="livesearch form-control" name="livesearch" required></select>
+                        <input type="hidden" name="sucursal_id" value="{{$sucursal->id}}">
+                        <input type="text" class="form-control" name="sucursal" id="sucursal" value="{{$sucursal->sucursal}}" readonly="readonly">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                     <h2>Selecciones Una Ventanilla</h2>
+                     </div>
+
+                     <div class="col-md-6 mb-3">
+                        <label for="validationDefault05">Ventanilla</label>
+                        <select class="ventanilla form-control" name="ventanilla" required>
+                         @foreach($servicio->ventanillas as $ventanilla)
+                          @if($ventanilla->estado=='Habilitada' && $ventanilla->sucursal_id==$sucursal->id)
+                          <option value="{{$ventanilla->id}}">{{$ventanilla->ventanilla}}</option> 
+                          @endif 
+                          @endforeach
+                        </select>
                     </div>
 
-                    <div class="form-group">
-                <div class="form-check">
 
-                       
-                        
+                    <div class="col-md-6 mb-3">
+                        <label for="validationDefault06">Fecha</label>
+                        <input class="form-control" id="date"  min="2020-10-31" name="fecha" type="date" required>
+                    </div>
+
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="form-check">
 
                     <div>
 
@@ -67,36 +86,11 @@
             </div>
 
 
-            </div>
-            
-
-
 
     </div>
 </div>
-</form>
 
-<script type="text/javascript">
-    $('.livesearch').select2({
-        placeholder: 'Selecciones Sucursal',
-        ajax: {
-            url: '{{route ('agendar.getsucursal')}}',
-            dataType: 'json',
-            delay: 250,
-            processResults: function (data) {
-                return {
-                    results: $.map(data, function (item) {
-                        return {
-                            text: item.sucursal,
-                            id: item.id
-                        }
-                    })
-                };
-            },
-            cache: true
-        }
-    });
-</script>
+</form>
 
 
 

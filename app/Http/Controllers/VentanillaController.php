@@ -29,7 +29,7 @@ public function store(Request $request, Sucursal $sucursal)
         $Ventanilla = Ventanilla::create([
          'ventanilla' => $request->get('nombre'),
          'sucursal_id'=> $sucursal->id,
-         'url'=>Str::slug($request->get('nombre')),
+         'url'=>Str::slug($request->get($sucursal->sucursal.'nombre')),
         ]);
          
 

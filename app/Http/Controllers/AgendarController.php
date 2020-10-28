@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 
-
 use Illuminate\Http\Request;
 use App\User;
 use App\Servicio;
 use App\Sucursal;
+use App\Ventanilla;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 class AgendarController extends Controller
 {
@@ -42,24 +45,9 @@ public function store(Request $request)
 
 
 
-           public function edit(Departamento $depa)
-    {
-
-    
-      return view('departamento.edit',compact('depa'));
-
-
-    }
 
 
 
-            public function destroy($id)
-    {
-        //
-        Departamento::find($id)->delete();
-        return redirect()->route('departamento.index')->with('success','Registro eliminado satisfactoriamente');
-        
-    }
 
 
 
@@ -78,5 +66,26 @@ public function store(Request $request)
         }
         return response()->json($sucursal);
    }
+
+
+
+    public function fase2(Request $request, User $user, Servicio $servicio){
+       
+        $sucursal=Sucursal::find($request->get('livesearch'));   
+      
+
+
+        return view('agendar.fase2',compact('user','servicio','sucursal'));
+    }
+
+
+    public function fase3(Request $request, User $user, Servicio $servicio){
+        $ventanilla= Ventanilla::find($request->get('ventanilla'));
+        $sucursal=Sucursal::find($request->get('sucursal_id'));  
+
+        $fecha=Carbon::parse($request->get('fecha'))->format('d-m-yy');
+
+        return view('agendar.fase3',compact('user','servicio','sucursal','ventanilla','fecha'));
+    }
 
 }

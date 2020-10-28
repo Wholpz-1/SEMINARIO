@@ -260,7 +260,8 @@ Route::get('seleccionar/{user}/{servicio}', 'ValidarDpiController@servicio')-> n
 Route::get('agendar/{user}/{servicio}', 'AgendarController@index')-> name('agendar.index');
 Route::get('agendar/getsucursal/','AgendarController@getSucursal')->name('agendar.getsucursal');
 
-
+Route::post('agendar/{user}/{servicio}', 'AgendarController@fase2')-> name('agendar.fase2');
+Route::post('agendarfase3/{user}/{servicio}', 'AgendarController@fase3')-> name('agendar.fase3');
 
 
 
