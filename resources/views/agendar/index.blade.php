@@ -2,14 +2,12 @@
 
 @section('content')
 
-<meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('select2/dist/css/select2.min.css')}}">
 
-    <!-- Script -->
-    <script src="{{asset('jquery-3.4.1.min.js')}}" type="text/javascript"></script>
-    <script src="{{asset('select2/dist/js/select2.min.js')}}" type="text/javascript"></script>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
 
 
@@ -39,9 +37,7 @@
 
                     <div class="col-md-6 mb-3">
                         <label for="validationDefault04">Sucursal</label>
-                        <select id='selUser' name="sucursal" class="form-control">
-                          <option value='0'>-- Select user --</option>
-                        </select>
+                        <select class="livesearch form-control" name="livesearch"></select>
                     </div>
 
 
@@ -67,37 +63,27 @@
     </div>
 </div>
 
- <!-- Script -->
-    <script type="text/javascript">
-
-    // CSRF Token
-    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-    $(document).ready(function(){
-
-      $( "#selUser" ).select2({
-        ajax: { 
-          url: "{{route('agendar.getsucursal')}}",
-          type: "post",
-          dataType: 'json',
-          delay: 250,
-          data: function (params) {
-            return {
-              _token: CSRF_TOKEN,
-              search: params.term // search term
-            };
-          },
-          processResults: function (response) {
-            return {
-              results: response
-            };
-          },
-          cache: true
+<script type="text/javascript">
+    $('.livesearch').select2({
+        placeholder: 'Selecciones Sucursal',
+        ajax: {
+            url: '{{route ('agendar.getsucursal')}}',
+            dataType: 'json',
+            delay: 250,
+            processResults: function (data) {
+                return {
+                    results: $.map(data, function (item) {
+                        return {
+                            text: item.sucursal,
+                            id: item.id
+                        }
+                    })
+                };
+            },
+            cache: true
         }
-
-      });
-
     });
-    </script>
+</script>
 
 
 

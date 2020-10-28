@@ -7,7 +7,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Servicio;
-use App\Sucural;
+use App\Sucursal;
 use Illuminate\Support\Str;
 
 class AgendarController extends Controller
@@ -65,24 +65,18 @@ public function store(Request $request)
 
     public function getSucursal(Request $request){
 
-      $search = $request->search;
+        $sucursal = [];
 
-      if($search == ''){
-         $sucursals = Sucursal::orderby('sucursal','asc')->select('id','sucursal')->limit(10)->get();
-      }else{
-         $sucursals = Sucursal::orderby('sucursal','asc')->select('id','sucursal')->where('sucursal', 'like', '%' .$search . '%')->limit(5)->get();
-      }
+        if($request->has('q')){
+            $search = $request->q;
+            $sucursal =Sucursal::select("id", "sucursal")
+                    ->where('sucursal', 'LIKE', "%$search%")
+                    ->get();
+        }else{
 
-      $response = array();
-      foreach($sucursals as $sucursal){
-         $response[] = array(
-              "id"=>$sucursal->id,
-              "text"=>$sucursal->name
-         );
-      }
-
-      echo json_encode($response);
-      exit;
+            $sucursal=Sucursal::all();
+        }
+        return response()->json($sucursal);
    }
 
 }

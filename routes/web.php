@@ -258,7 +258,7 @@ Route::get('seleccionar/{user}/{servicio}', 'ValidarDpiController@servicio')-> n
 //rutas agendar cita
 
 Route::get('agendar/{user}/{servicio}', 'AgendarController@index')-> name('agendar.index');
-Route::post('agendar/getsucursal/','AgendarController@getSucursal')->name('agendar.getsucursal');
+Route::get('agendar/getsucursal/','AgendarController@getSucursal')->name('agendar.getsucursal');
 
 
 
