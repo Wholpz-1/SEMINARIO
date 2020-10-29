@@ -21,6 +21,11 @@ Route::get('/dpivali/', function () {
     return view('validacion');
 });
 
+
+Route::get('/citavali/', function () {
+    return view('valicita');
+});
+
 Route::get('/dpivali/tramites/', function () {
     return view('tramites');
 
@@ -244,6 +249,7 @@ Route::delete('hora/{ventanilla}', 'HoraController@destroy')-> name('hora.destro
 //rutas validad dpi
 
 Route::post('validardpi', 'ValidarDpiController@validar')-> name('validar.validar');
+Route::post('validarcita', 'ValidarDpiController@cita')-> name('validar.cita');
 
 
 

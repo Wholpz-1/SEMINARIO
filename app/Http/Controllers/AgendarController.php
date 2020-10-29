@@ -45,7 +45,7 @@ public function store(Request $request, User $user, Servicio $servicio)
          
 
        
-       return view('agendar.index',compact('user','cita','servicio'));
+       return view('agendar.finalizada',compact('user','cita'));
            }
 
 
@@ -85,16 +85,36 @@ public function store(Request $request, User $user, Servicio $servicio)
 
 
     public function fase3(Request $request, User $user, Servicio $servicio){
+
         $ventanilla= Ventanilla::find($request->get('ventanilla'));
         $sucursal=Sucursal::find($request->get('sucursal_id'));  
 
         $fecha=Carbon::parse($request->get('fecha'))->format('d-m-yy');
 
-        $horarios=$ventanilla->horaventanillas;
+        $cita=$ventanilla->citas;
+        $ocupadas=$cita->where('fecha', '=', $request->get('fecha'))->where('estado','=','Solicitada');
+        $prueba=[];
+        $hora2=$ventanilla->horaventanillas;
+        $conta=0;
 
-        
 
-        return view('agendar.fase3',compact('user','servicio','sucursal','ventanilla','fecha','horarios'));
+         foreach($ocupadas as $cita)
+         {
+                         foreach($ventanilla->horaventanillas as $hora){
+                          
+                                if($hora->id == $cita->horaventanilla_id){
+                                   $prueba[$conta]=$hora->id; 
+                                   $conta=$conta+1;
+
+                    }               
+                                }
+        }   
+
+
+                                
+
+   
+        return view('agendar.fase3',compact('user','servicio','sucursal','ventanilla','fecha','prueba'));
     }
 
 }

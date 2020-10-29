@@ -30,7 +30,7 @@ class Cita extends Model
 
     public function servicio()
     {
-        return $this->belongsTo('App\Servcio');
+        return $this->belongsTo('App\Servicio');
     }
 
     public function horaventanilla()

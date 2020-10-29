@@ -63,22 +63,7 @@
                             <a class="nav-link" href="https://www.renap.gob.gt/contactenos">Contáctenos</a>
                         </li>
                     </ul>
-                    <form class="from-inline">
-                        <div class="flex-center position-ref full-height">
-                            @if (Route::has('login'))
-                                <div class="top-right links">
-                                    @auth
-                                        <a class="nav-link active" style="color:black;" href="{{ url('/home') }}"> <p>Bienvenido {{ Auth::user()->name}}</p></a>
-                                    @else
-                                        <a class="nav-link active" style="color:black;" href="{{ route('login') }}">Iniciar Sesion</a>
 
-                                        @if (Route::has('register'))
-
-                                        @endif
-                                    @endauth
-                                </div>
-                        @endif
-                    </form>
                 </div>
             </nav>
 
@@ -89,15 +74,33 @@
     </header>
 
     <main role="main" class="inner cover">
-        <h5 class="cover-heading">Agenda tu cita hoy mismo!</h5>
+         <form role="form" method="POST" action="{{route('validar.cita')}}">
+            {{ csrf_field() }}
 
-        <div class="card mb-3">
-            <img src="https://lh3.googleusercontent.com/UqR4NunhEH_RopKUCPkjv1hFp46zsLUaxQ2uursVmuxha2nWpPuBD7IduolK7aPIKZg" class="card-img-top"  width="300px" height="275px">
+            <h5 class="cover-heading">Ingresa Numero de Cita</h5>
+            <div class="form-group">
+
+                <input type="number" class="form-control" name="cita" id="cita" required>
+            </div>
+
+            <div class="card mb-3">
+                <img src="https://radiotgw.gob.gt/wp-content/uploads/2019/02/DPI.png" class="card-img-top"  width="300px" height="275px">
+            </div>
+
+
+
+     
+
+
+
+        <div class="col-xs-4">
+
+            <p class="lead">
+                 <button type="submit" class="btn btn-lg btn-secondary" role="button" type="submit" aria-pressed="true">Validar</button>
+            </p>
         </div>
-        <p class="lead">
-            <a href="{{ url ('/dpivali/') }}" class="btn btn-lg btn-secondary">Empezar</a>
-             <a href="{{ url ('/citavali/') }}" class="btn btn-lg btn-secondary">Consultar Cita</a>
-        </p>
+
+           </form>
     </main>
 
 

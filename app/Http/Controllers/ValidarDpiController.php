@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Servicio;
+use App\Cita;
 use Illuminate\Support\Str;
 
 class ValidarDpiController extends Controller
@@ -43,6 +44,16 @@ class ValidarDpiController extends Controller
 		          return view('plantilla',compact('servicio','user'));
 
 		         }
+
+
+
+                  public function cita(Request $request){
+
+                    $cita=Cita::find($request->get('cita'));
+                    $user=$cita->user;
+                  return view('estadocita',compact('cita','user'));
+
+                 }
 
 
          
