@@ -95,7 +95,7 @@
             <img src="https://lh3.googleusercontent.com/UqR4NunhEH_RopKUCPkjv1hFp46zsLUaxQ2uursVmuxha2nWpPuBD7IduolK7aPIKZg" class="card-img-top"  width="300px" height="275px">
         </div>
         <p class="lead">
-            <a href="{{ url ('/dpivali/') }}" class="btn btn-lg btn-secondary">Empezar</a>
+            <a href="{{ url ('/dpivali/') }}" class="btn btn-lg btn-secondary">Agendar Cita</a>
              <a href="{{ url ('/citavali/') }}" class="btn btn-lg btn-secondary">Consultar Cita</a>
         </p>
     </main>
