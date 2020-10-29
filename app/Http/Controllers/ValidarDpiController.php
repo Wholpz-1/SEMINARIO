@@ -48,9 +48,13 @@ class ValidarDpiController extends Controller
 
 
                   public function cita(Request $request){
-
+                     $user=[];
                     $cita=Cita::find($request->get('cita'));
-                    $user=$cita->user;
+                    if ($cita!=null) {
+                        # code...
+                        $user=$cita->user;
+                    }
+                    
                   return view('estadocita',compact('cita','user'));
 
                  }

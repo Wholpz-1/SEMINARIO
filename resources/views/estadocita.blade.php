@@ -4,7 +4,7 @@
 
 
 
-
+  @if($cita!=null)
 
 
     <div class="container">
@@ -82,7 +82,31 @@
     </div>
 </div>
 
+@else
 
+<section class="mainContent clearfix stepsWrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="innerWrapper clearfix stepsPage">
+                <div class="row justify-content-center order-confirm">
+                  <div class="col-md-8 col-lg-6 text-center">
+                    <h2>Error</h2>
+                    <span></span>
+                    <p class="">
+                     Datos no coninciden con ninguna cita agendada verifique nuevamente
+                    </p>
+                    <a href="/" class="btn btn-primary btn-default">Inicio</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+@endif
 
 
 

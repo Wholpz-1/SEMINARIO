@@ -46,7 +46,7 @@
                     <a class="nav-link" >Bienvenido <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">{{$user->name}}</a>
+                    <a class="nav-link" href="#">@if($user!= null){{$user->name}}@endif</a>
                 </li>
 
             </ul>
