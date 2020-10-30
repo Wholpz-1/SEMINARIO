@@ -32,9 +32,22 @@
         </form>
 
             <div class="input-group">
-            <span><p><a class="btn btn-secondary" href="{{ url('/home/cita/') }}" role="button">Cita</a></p>
+            <span><p><a class="btn btn-secondary" href="{{ url('/cita/Solicitada/') }}" role="button">Cita Solicitadas</a>
+            </p>
             </span>
-        </div>
+             </div>
+
+             <div class="input-group">
+            <span><p><a class="btn btn-secondary" href="{{ url('/cita/Cancelada/') }}" role="button">Cita Canceladas</a>
+            </p>
+            </span>
+             </div>
+
+             <div class="input-group">
+            <span><p><a class="btn btn-secondary" href="{{ url('/cita/Terminada/') }}" role="button">Cita Compleatadas</a>
+            </p>
+            </span>
+             </div>
 
             <div class="input-group">
               <span>  <p><a class="btn btn-secondary" href="{{ url('departamento') }}" role="button">Departamento</a></p>
@@ -58,6 +71,13 @@
             <span><p><a class="btn btn-secondary" href="{{ url('iconos') }}" role="button">Iconos</a></p>
             </span>
         </div>
+
+        <div class="input-group">
+            <span><p><a class="btn btn-secondary" href="{{ url('usuarios') }}" role="button">Usuarios</a></p>
+            </span>
+        </div>
+
+
 
         <!-- Sidebar Menu -->
 

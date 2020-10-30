@@ -231,8 +231,14 @@ Route::post('hora/{ventanilla}', 'HoraController@store')-> name('hora.store');
 Route::delete('hora/{ventanilla}', 'HoraController@destroy')-> name('hora.destroy');
 
 
+Route::get('usuarios', 'UsuariosController@index')-> name('usuarios.index');
+Route::get('usuarios/{usua}', 'UsuariosController@edit')-> name('usuarios.edit');
+Route::put('usuarios/{usua}', 'UsuariosController@update')-> name('usuarios.update');
 
 
+
+Route::get('cita/{estado}', 'VerCitaController@index')-> name('vercita.index');
+Route::put('cita/{cita}', 'VerCitaController@update')-> name('vercita.update');
 
 
 
@@ -269,6 +275,13 @@ Route::get('agendar/getsucursal/','AgendarController@getSucursal')->name('agenda
 Route::post('agendar/{user}/{servicio}', 'AgendarController@fase2')-> name('agendar.fase2');
 Route::post('agendarfase3/{user}/{servicio}', 'AgendarController@fase3')-> name('agendar.fase3');
 Route::post('confirmarcita/{user}/{servicio}', 'AgendarController@store')-> name('agendar.store');
+
+
+
+
+
+
+
 
 
 

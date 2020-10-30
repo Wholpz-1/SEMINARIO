@@ -2,47 +2,60 @@
 
 @section('content')
 
-    
+  
 
     <div class="container">
 
-      <h1>Todos Los Iconos</h1>
-
-       <div>
-    <br>
-    <button class="btn btn-primary btn-lg active" data-toggle="modal" data-target="#exampleModal" aria-pressed="true">Añadir
-    </button>
-      </div>
+      <h1>Citas</h1>
 
         <div class="card-body">
             <table id="posts-table" class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th>ID</th>
+                  <th>#</th>
                   <th>Nombre</th>
-                  <th>Imagen</th>
-                  <th>ACCIONES</th>
+                  <th>Dpi</th>
+                  <th>Fecha</th>
+                  <th>Hora</th>
+                  <th>Servicio</th>
+                  <th>Acciones</th>
                 </tr>
               </thead>
               <tbody>
-              @foreach($iconos as $icono)
+               
+              @foreach($r as $cita)
                 <tr>
-                  <td>{{$icono->id}}</td>
-                  <td>{{$icono->nombre}}</td>
-                  <td><img src="{{$icono->url}}" border="1" alt="Este es el ejemplo de un texto alternativo" width="100" height="100"></td>
+                  <td>{{$cita->id}}</td>
+                  <td>{{$cita->user->name}}</td>
+                  <td>{{$cita->user->dpi}}</td>
+                  <td>{{$cita->fecha}}</td>
+                  <td>{{$cita->horaventanilla->hora}}</td>
+                  <td>{{$cita->servicio->nombre}}</td>
+
+
                   <td>
 
 
-                    <form action="{{route('icono.destroy', $icono)}}" method="post">
-                      {{csrf_field()}}
-                      <input name="_method" type="hidden" value="DELETE">
-                      
+                  @if($cita->estado=='Solicitada')
+                   <form action="{{route('vercita.update',$cita)}}" method="post">
+                      {{ csrf_field() }} {{ method_field('PUT') }}
+                      <input type="hidden" name="estado" value="Terminada">
+                      <button class="col-sm-2 btn btn-xs btn-info  " type="submit"><span class="fa fa-pencil"></span></button>
+                    </form>
+
+
+                    <form action="{{route('vercita.update',$cita)}}" method="post">
+                      {{ csrf_field() }} {{ method_field('PUT') }}
+                      <input type="hidden" name="estado" value="Cancelada">
                       <button class="col-sm-2 btn btn-xs btn-danger " type="submit"><span class="fa fa-times"></span></button>
                     </form>
+
+                   @endif
 
 
                   </td>
                 </tr>
+              
             @endforeach
               </tbody>
               <tfoot>

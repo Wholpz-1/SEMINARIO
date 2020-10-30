@@ -24,8 +24,10 @@ class CreateUsersTable extends Migration
             $table->string('genero')->nullable();
             $table->string('apellidos')->nullable();
             $table->string('url')->nullable();
+            $table->string('contra')->nullable();
             //llave foranea relacion a 1 a 1
             $table->foreignId('rol_id')->references('id')->on('rols')->constrained()->onDelete('cascade');
+            $table->foreignId('sucursal_id')->nullable()->references('id')->on('sucursals')->constrained()->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
         });

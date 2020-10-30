@@ -25,6 +25,7 @@ class User extends Authenticatable
         'genero',
         'rol_id',
         'url',
+        'sucursal_id',
 
     ];
 
@@ -50,7 +51,11 @@ class User extends Authenticatable
     ///////////////////////////////////relaciones////////////////////////////
 
     public function rol() {
-        return $this->hasOne('App\Rol');
+        return $this->belongsTo('App\Rol');
+      }
+
+      public function sucursal() {
+        return $this->belongsTo('App\Sucursal');
       }
 
       public function servicios()

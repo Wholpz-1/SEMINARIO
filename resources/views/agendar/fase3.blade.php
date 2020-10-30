@@ -71,13 +71,9 @@
                          
                        @foreach($prueba as $p)
 
-                         @foreach($ventanilla->horaventanillas as $hora)
-                          
-                                @if($hora->id != $p)
+                        
                                     <option value="{{$hora->id}}">{{$hora->hora}}</option> 
-                                @endif
-
-                                 @endforeach
+                               
                           @endforeach
                         </select>
                     </div>

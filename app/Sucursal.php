@@ -28,6 +28,11 @@ class Sucursal extends Model
         return $this->hasMany('App\Ventanilla');
     }
 
+     public function user()
+    {
+        return $this->hasMany('App\User');
+    }
+
 
 
  public function getRouteKeyName()

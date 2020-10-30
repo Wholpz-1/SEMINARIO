@@ -2,17 +2,11 @@
 
 @section('content')
 
-    
+  
 
     <div class="container">
 
-      <h1>Todos Los Iconos</h1>
-
-       <div>
-    <br>
-    <button class="btn btn-primary btn-lg active" data-toggle="modal" data-target="#exampleModal" aria-pressed="true">Añadir
-    </button>
-      </div>
+      <h1>Todos los Usuarios</h1>
 
         <div class="card-body">
             <table id="posts-table" class="table table-bordered table-striped">
@@ -20,29 +14,34 @@
                 <tr>
                   <th>ID</th>
                   <th>Nombre</th>
-                  <th>Imagen</th>
+                  <th>Dpi</th>
                   <th>ACCIONES</th>
                 </tr>
               </thead>
               <tbody>
-              @foreach($iconos as $icono)
+                @php 
+                $contador=1;
+                @endphp
+              @foreach($usuarios as $usu)
                 <tr>
-                  <td>{{$icono->id}}</td>
-                  <td>{{$icono->nombre}}</td>
-                  <td><img src="{{$icono->url}}" border="1" alt="Este es el ejemplo de un texto alternativo" width="100" height="100"></td>
+                  <td>{{$contador}}</td>
+                  <td>{{$usu->name}}</td>
+                  <td>
+                    {{$usu->dpi}}
+                  </td>
+
+
                   <td>
 
 
-                    <form action="{{route('icono.destroy', $icono)}}" method="post">
-                      {{csrf_field()}}
-                      <input name="_method" type="hidden" value="DELETE">
-                      
-                      <button class="col-sm-2 btn btn-xs btn-danger " type="submit"><span class="fa fa-times"></span></button>
-                    </form>
+                    <a href="{{route('usuarios.edit', $usu)}}" class="col-sm-2 btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
 
 
                   </td>
                 </tr>
+                @php 
+                $contador=$contador+1;
+                @endphp
             @endforeach
               </tbody>
               <tfoot>
