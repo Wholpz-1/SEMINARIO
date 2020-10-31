@@ -56,7 +56,7 @@
 
                     <div class="col-md-6 mb-3">
                         <label for="validationDefault06">Fecha</label>
-                        <input class="form-control" name="fecha" value="{{$fecha}}" id="date" type="input" readonly="readonly">
+                        <input class="form-control" name="fecha" value="{{$fecha}}" id="date" type="input" readonly="readonly"> 
                     </div>
 
 
@@ -69,7 +69,7 @@
                         <label for="validationDefault05">Horarios</label>
                         <select class="ventanilla form-control" name="hora" required>
                          
-                       @foreach($prueba as $p)
+                       @foreach($ventanilla->horaventanillas as $hora)
 
                         
                                     <option value="{{$hora->id}}">{{$hora->hora}}</option> 
