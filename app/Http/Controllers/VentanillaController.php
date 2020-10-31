@@ -17,7 +17,7 @@ class VentanillaController extends Controller
 
 
 
-
+ 
 
 public function store(Request $request, Sucursal $sucursal)
     {
@@ -29,7 +29,7 @@ public function store(Request $request, Sucursal $sucursal)
         $Ventanilla = Ventanilla::create([
          'ventanilla' => $request->get('nombre'),
          'sucursal_id'=> $sucursal->id,
-         'url'=>Str::slug($request->get($sucursal->sucursal.'nombre')),
+         'url'=>Str::slug($sucursal->sucursal." ".$request->get('nombre')),
         ]);
          
 
