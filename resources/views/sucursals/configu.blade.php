@@ -108,7 +108,7 @@
         <div class="modal-body">
           <div class="form-group {{ $errors->has('nombre') ? 'has-error' : '' }}">
             <label for="nombre">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre del Departamento">
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre de Una ventanilla">
             {!! $errors->first('nombre', '<span class="help-block">:message</span>') !!}
 
           </div>
