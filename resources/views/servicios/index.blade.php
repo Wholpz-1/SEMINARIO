@@ -3,6 +3,8 @@
 @section('content')
 
      <div>
+
+      <h1>Todos Los Servicios</h1>
     <br>
     <button class="btn btn-primary btn-lg active" data-toggle="modal" data-target="#exampleModal" aria-pressed="true">Añadir
     </button>
@@ -76,7 +78,7 @@
         <div class="modal-body">
           <div class="form-group {{ $errors->has('nombre') ? 'has-error' : '' }}">
             <label for="nombre">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre del Departamento">
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre del Servicio">
             {!! $errors->first('nombre', '<span class="help-block">:message</span>') !!}
 
           </div>
