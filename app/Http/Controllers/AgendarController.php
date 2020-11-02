@@ -93,6 +93,8 @@ public function store(Request $request, User $user, Servicio $servicio)
 
         $cita=$ventanilla->citas;
         $ocupadas=$cita->where('fecha', '=', $request->get('fecha'))->where('estado','=','Solicitada');
+
+
         $prueba=[];
         $hora2=$ventanilla->horaventanillas;
         $conta=0;
@@ -109,9 +111,7 @@ public function store(Request $request, User $user, Servicio $servicio)
                     }               
                                 }
         }   
-
-
-                                
+                     
 
    
         return view('agendar.fase3',compact('user','servicio','sucursal','ventanilla','fecha','prueba'));

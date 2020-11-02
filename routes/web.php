@@ -135,12 +135,14 @@ Route::get('/Cambio/Nombre/', function () {
 
 
 
-
-Auth::routes(['verify' => true]);
+   // Authentication Routes...
+        Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+        Route::post('login', 'Auth\LoginController@login');
+        Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/home', 'HomeController@index')->middleware('verified');
 
-Auth::routes(['verify' => true]);
+
 
 
 Route::get('/home/depa/', function () {
@@ -175,6 +177,10 @@ Route::get('/tramites/citac/', function () {
 });
 
 
+
+
+Route::group(['middleware' => 'auth'], function () {
+    //
 
 
 //rutas de crud departamento
@@ -242,7 +248,7 @@ Route::put('cita/{cita}', 'VerCitaController@update')-> name('vercita.update');
 
 
 
-
+});
 
 
 

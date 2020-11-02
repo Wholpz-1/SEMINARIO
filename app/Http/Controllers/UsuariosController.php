@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+ 
 
 
 use Illuminate\Http\Request;
 use App\User;
 use App\Rol;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
 
 class UsuariosController extends Controller
 {
@@ -40,6 +41,12 @@ public function edit(User $usua)
 
         $usua->sucursal_id= $request->get('livesearch');
         $usua->rol_id= $request->get('rol');
+        $usua->email= $request->get('correo');
+
+        if($request->get('contra') != null){
+        $usua->password=Hash::make($request->get('contra'));
+        }
+
         $usua->save();
 
          return view('usuarios.edit',compact('usua', 'rols'));

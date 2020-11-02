@@ -49,6 +49,10 @@
             </span>
              </div>
 
+
+
+            @if( Auth::user()->rol->rol=='Administrador')
+
             <div class="input-group">
               <span>  <p><a class="btn btn-secondary" href="{{ url('departamento') }}" role="button">Departamento</a></p>
           </span>
@@ -77,7 +81,7 @@
             </span>
         </div>
 
-
+        @endif
 
         <!-- Sidebar Menu -->
 

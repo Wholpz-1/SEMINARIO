@@ -32,6 +32,26 @@
                 </div>
 
             </div>
+
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationDefault03">Correo</label>
+                    <input type="mail" name="correo" value="{{$usua->email}}" class="form-control">
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="validationDefault03">Contraseña</label>
+                    <input type="password" name="contra" class="form-control" >
+                </div>
+
+            </div>
+
+
+
             <div class="form-row">
                 <div class="col-md-6 mb-3">
 
