@@ -70,10 +70,10 @@
                         <select class="ventanilla form-control" name="hora" required>
                          
                        @foreach($ventanilla->horaventanillas as $hora)
-
+                                @if($hora->estado=='Libre')
                         
                                     <option value="{{$hora->id}}">{{$hora->hora}}</option> 
-                               
+                               @endif
                           @endforeach
                         </select>
                     </div>

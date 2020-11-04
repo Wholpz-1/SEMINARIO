@@ -31,8 +31,11 @@ class VerCitaController extends Controller
 
         $estado=$cita->estado;
         $cita->estado=$request->get('estado');
+        $hora=$cita->horaventanilla;
+        $hora->estado='Libre';
         $cita->fecha=Carbon::now();
         $cita->save();
+        $hora->save();
 
            return redirect()->route('vercita.index',$estado);
 

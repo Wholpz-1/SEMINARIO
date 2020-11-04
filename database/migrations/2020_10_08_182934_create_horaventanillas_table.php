@@ -17,6 +17,7 @@ class CreateHoraventanillasTable extends Migration
             $table->id();
             $table->string('hora')->nullable();
             $table->foreignId('ventanilla_id')->references('id')->on('ventanillas')->constrained()->onDelete('cascade');
+            $table->enum('estado',['Ocupada','Libre'])->default('Libre');
             $table->timestamps();
         });
     }

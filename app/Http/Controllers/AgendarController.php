@@ -9,6 +9,7 @@ use App\Servicio;
 use App\Sucursal;
 use App\Ventanilla;
 use App\Cita;
+use App\Horaventanilla;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -42,6 +43,12 @@ public function store(Request $request, User $user, Servicio $servicio)
          'servicio_id'=>$servicio->id,
          'horaventanilla_id'=>$request->get('hora'),
         ]);
+
+            $hora= Horaventanilla::find($request->get('hora'));
+            $hora->estado='Ocuapada';
+            $hora->save();
+
+
          
 
        
@@ -94,27 +101,10 @@ public function store(Request $request, User $user, Servicio $servicio)
         $cita=$ventanilla->citas;
         $ocupadas=$cita->where('fecha', '=', $request->get('fecha'))->where('estado','=','Solicitada');
 
-
-        $prueba=[];
-        $hora2=$ventanilla->horaventanillas;
-        $conta=0;
-
-
-         foreach($ocupadas as $cita)
-         {
-                         foreach($ventanilla->horaventanillas as $hora){
-                          
-                                if($hora->id == $cita->horaventanilla_id){
-                                   $prueba[$conta]=$hora->id; 
-                                   $conta=$conta+1;
-
-                    }               
-                                }
-        }   
-                     
+                  
 
    
-        return view('agendar.fase3',compact('user','servicio','sucursal','ventanilla','fecha','prueba'));
+        return view('agendar.fase3',compact('user','servicio','sucursal','ventanilla','fecha'));
     }
 
 }
