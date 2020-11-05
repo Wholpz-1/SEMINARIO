@@ -81,6 +81,12 @@
             </span>
         </div>
 
+
+        <div class="input-group">
+            <span><p><a class="btn btn-secondary" href="{{ url('datos') }}" role="button">Datos</a></p>
+            </span>
+        </div>
+
         @endif
 
         <!-- Sidebar Menu -->

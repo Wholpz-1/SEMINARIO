@@ -45,7 +45,7 @@ public function store(Request $request, User $user, Servicio $servicio)
         ]);
 
             $hora= Horaventanilla::find($request->get('hora'));
-            $hora->estado='Ocuapada';
+            $hora->estado='Ocupada';
             $hora->save();
 
 

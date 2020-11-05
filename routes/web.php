@@ -248,6 +248,12 @@ Route::put('cita/{cita}', 'VerCitaController@update')-> name('vercita.update');
 
 
 
+
+Route::get('datos', 'DatosController@index')-> name('datos.index');
+Route::get('datos/{sucursal}', 'DatosController@datos')-> name('datos.datos');
+Route::post('datos', 'DatosController@fecha')-> name('datos.consulta');
+
+
 });
 
 
