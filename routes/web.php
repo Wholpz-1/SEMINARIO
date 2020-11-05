@@ -290,6 +290,10 @@ Route::post('confirmarcita/{user}/{servicio}', 'AgendarController@store')-> name
 
 
 
+Route::get('imprimir/{cita}', 'PdfController@imprimir')->name('imprimir.imprimir');
+
+
+
 
 
 

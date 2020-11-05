@@ -19,6 +19,7 @@
                      #{{$cita->id}}
                     </p>
                     <a href="/" class="btn btn-primary btn-default">Inicio</a>
+                     <a href="{{route ('imprimir.imprimir',$cita)}}" class="btn btn-primary btn-default">Imprmir</a>
                   </div>
                 </div>
               </div>

@@ -98,6 +98,7 @@
             <p class="lead">
                  <button type="submit" class="btn btn-lg btn-secondary" role="button" type="submit" aria-pressed="true">Validar</button>
             </p>
+
         </div>
 
            </form>

@@ -74,6 +74,8 @@
                          <input class="form-control" name="fecha" value="{{$cita->estado}}" id="date" type="input" readonly="readonly">
                     </div>
 
+                    <a href="{{route ('imprimir.imprimir',$cita)}}" class="btn btn-primary btn-default">Imprmir</a>
+
             </div>
             
 
