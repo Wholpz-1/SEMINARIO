@@ -51,8 +51,8 @@
                         <select class="ventanilla form-control" name="ventanilla" required>
                          @foreach($servicio->ventanillas as $ventanilla)
                           @if($ventanilla->estado=='Habilitada' && $ventanilla->sucursal_id==$sucursal->id)
-                          <option value="{{$ventanilla->id}}">{{$ventanilla->ventanilla}}</option> 
-                          @endif 
+                          <option value="{{$ventanilla->id}}">{{$ventanilla->ventanilla}}</option>
+                          @endif
                           @endforeach
                         </select>
                     </div>
@@ -60,7 +60,7 @@
 
                     <div class="col-md-6 mb-3">
                         <label for="validationDefault06">Fecha</label>
-                        <input class="form-control" id="date"  min="2020-10-31" name="fecha" type="date" required>
+                        <input class="form-control" id="date" min="{{date('Y-m-d') }}" name="fecha" type="date" required>
                     </div>
 
             </div>
@@ -74,11 +74,11 @@
 
                         <button type="submit" class="btn btn-primary btn-lg active" role="button" type="submit" aria-pressed="true">Siguiente</button>
 
-                       
+
                         <br>
                     </div>
 
-                   
+
 
 
 
