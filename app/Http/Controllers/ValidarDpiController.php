@@ -21,15 +21,15 @@ class ValidarDpiController extends Controller
          $servicio = Servicio::all();
 
          if($user!=null){
-         	
+
 			return view('tramites',compact('servicio','user'));
-		
+
 
          }else{
-	       return view('validacion',compact('servicio','user')); 
+	       return view('validacion',compact('servicio','user'));
          }
 
-        
+
 
 
 
@@ -37,7 +37,30 @@ class ValidarDpiController extends Controller
     }
 
 
-         
+
+
+    public function atras(User $user)
+    {
+
+        $servicio = Servicio::all();
+
+
+
+            return view('tramites',compact('servicio','user'));
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
 
 		 public function servicio(User $user, Servicio $servicio){
 
@@ -54,13 +77,13 @@ class ValidarDpiController extends Controller
                         # code...
                         $user=$cita->user;
                     }
-                    
+
                   return view('estadocita',compact('cita','user'));
 
                  }
 
 
-         
+
 
 
 

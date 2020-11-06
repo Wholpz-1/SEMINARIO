@@ -17,7 +17,7 @@
             <div class="card-body">
                 <head aling="left">
                     <h6>{!!$servicio->requisitos!!} <span class="badge badge-secondary"></span></h6>
-                   
+
                 </head>
             </div>
 
@@ -29,7 +29,7 @@
         <div class="text-center">
         <div class="card-footer text-muted">
 
-         <a href="{{ url ('/dpivali/tramites/') }}" class="btn btn-lg btn-secondary">Regresar</a>
+         <a href="{{ route('validar.atras',$user) }}" class="btn btn-lg btn-secondary">Regresar</a>
 
         <a href="{{ route ('agendar.index', [$user,$servicio]) }}" class="btn btn-lg btn-success">Agendar Cita</a>
 

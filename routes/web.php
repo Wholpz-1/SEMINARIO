@@ -29,7 +29,7 @@ Route::get('/citavali/', function () {
 Route::get('/dpivali/tramites/', function () {
     return view('tramites');
 
- 
+
 });
 
 
@@ -223,7 +223,7 @@ Route::put('servicios/{servicio}', 'ServiciosController@update')-> name('servici
 
 
 
-// rutas ventanillas 
+// rutas ventanillas
 
 Route::post('ventanilla/{sucursal}', 'VentanillaController@store')-> name('ventanilla.store');
 Route::delete('ventanilla/{sucursal}', 'VentanillaController@destroy')-> name('ventanilla.destroy');
@@ -269,12 +269,14 @@ Route::post('datos', 'DatosController@fecha')-> name('datos.consulta');
 Route::post('validardpi', 'ValidarDpiController@validar')-> name('validar.validar');
 Route::post('validarcita', 'ValidarDpiController@cita')-> name('validar.cita');
 
+Route::get('validarcitas/{user}', 'ValidarDpiController@atras')-> name('validar.atras');
 
 
 
 
 
-//servicios 
+
+//servicios
 Route::get('seleccionar/{user}/{servicio}', 'ValidarDpiController@servicio')-> name('validar.servicio');
 
 
